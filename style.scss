@@ -634,4 +634,76 @@ body {
 		}
 	}
 
+	// page 3
+	.documentation-container {
+		padding-top: 8rem;
+		@include flex($direction:column);
+		gap: 5rem;
+		padding-inline: 2.5rem;
+		overflow: hidden;
+
+		@include laptop() {
+			@include flex();
+			gap: 2rem;
+		}
+
+		.left {
+			@include flex($direction:column);
+			gap: 1.25rem;
+
+			h3 {
+				font-family: zen;
+				text-transform: capitalize;
+				font-weight: 400;
+				font-size: .875rem;
+			}
+
+			p {
+				text-align: center;
+				font-family: aeonik;
+				width: 75%;
+
+				@include tablet() {}
+
+				span {
+					color: rgba(179, 205, 228, 1);
+				}
+			}
+
+			button {
+				font-weight: 700;
+				background-color: rgba(149, 190, 220, 0.81);
+				padding: .5rem 1rem;
+				font-size: 10px;
+				border: none;
+				outline: none;
+				border-radius: 15px;
+				text-transform: capitalize;
+			}
+		}
+
+		.right {
+			width: 100%;
+			height: 500px;
+			@include flex($justify:flex-end);
+			position: relative;
+
+			@include laptop() {
+				width: 65%;
+			}
+
+			img {
+				object-fit: contain;
+				@include equal(inherit);
+				position: absolute;
+				top: 0rem;
+				right: -150px;
+				scale: 1.5;
+
+				@include laptop() {
+					scale: 1.75;
+				}
+			}
+		}
+	}
 }
