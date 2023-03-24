@@ -63,6 +63,22 @@ $breakpoints: ("mobile": 250px, "mini-tablet": 481px, "tablet": 768px, "laptop":
 	width: $value;
 }
 
+@font-face {
+	font-family: zen;
+	src: url("/zendots.ttf");
+}
+
+@font-face {
+	font-family: aeonik;
+	src: url("/AeonikTRIAL-Bold.otf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+$montserrat: 'Montserrat',
+sans-serif;
+
+
+
 * {
 	margin: 0%;
 	padding: 0%;
@@ -129,6 +145,7 @@ body {
 					&:nth-of-type(2) {
 						font-size: .75rem;
 						color: rgba(152, 188, 219, 1);
+						font-family: zen;
 
 						@include tablet() {
 							font-size: 1.25rem;
@@ -155,6 +172,7 @@ body {
 					background-color: rgba(44, 55, 75, 1);
 					color: white;
 					font-weight: 400;
+					font-family: $montserrat;
 
 					@include tablet() {
 						height: 50px;
@@ -220,6 +238,7 @@ body {
 
 					* {
 						font-weight: 700;
+						font-family: aeonik;
 					}
 
 					h2 {
@@ -270,6 +289,7 @@ body {
 							p {
 								font-size: .75rem;
 								font-weight: 700;
+								font-family: aeonik;
 
 								@include tablet() {
 									font-size: .9375rem;
@@ -292,6 +312,8 @@ body {
 								border: none;
 								outline: none;
 								backdrop-filter: blur(25px);
+								font-family: zen;
+								letter-spacing: 1px;
 
 								@include tablet() {
 									width: 255px;
@@ -336,6 +358,7 @@ body {
 							p {
 								font-weight: 700;
 								font-size: .8125rem;
+								font-family: aeonik;
 
 								@include tablet() {
 									font-size: .9375rem;
@@ -357,6 +380,7 @@ body {
 										rgba(110, 162, 200, 0.5) -4.87%,
 										rgba(255, 255, 255, 0.268229) 45.57%,
 										rgba(255, 255, 255, 0) 103.95%);
+								font-family: zen;
 
 								@include tablet() {
 									width: 255px;
@@ -378,8 +402,11 @@ body {
 
 								img {
 									position: absolute;
-									right: 2.5%;
-									@include equal(35%)
+									right: 10%;
+
+									@include laptop() {
+										@include equal(25px);
+									}
 								}
 							}
 						}
@@ -391,6 +418,7 @@ body {
 		// display: none;
 	}
 
+	// page 2
 	.main {
 		// border: 2px solid;
 		gap: 8rem;
@@ -417,6 +445,8 @@ body {
 			h3 {
 				text-transform: capitalize;
 				font-size: .875rem;
+				font-family: zen;
+				font-weight: 400;
 
 				@include tablet() {
 					font-size: 1.125rem;
@@ -463,6 +493,7 @@ body {
 
 					* {
 						font-weight: 700;
+						font-family: aeonik;
 					}
 
 					span {
@@ -503,6 +534,7 @@ body {
 			gap: 5rem;
 			padding-inline: 1.5rem;
 			width: 100%;
+			font-family: aeonik;
 
 			@include laptop() {
 				width: 80%;
@@ -530,12 +562,12 @@ body {
 							position: absolute;
 
 							&:nth-of-type(2) {
-								right: 7px;
+								right: 16px;
 								top: 12px;
 
 								@include laptop() {
-									right: 15px;
-									top: 11px;
+									right: 19px;
+									top: 12px;
 								}
 							}
 						}
@@ -548,13 +580,13 @@ body {
 							position: absolute;
 
 							&:nth-of-type(2) {
-								right: 3px;
-								top: 7px;
+								right: 12px;
+								top: 8px;
 								z-index: -1;
 
 								@include laptop() {
-									right: 10px;
-									top: 6px;
+									right: 15px;
+									top: 8px;
 								}
 							}
 						}
@@ -572,8 +604,8 @@ body {
 								z-index: -1;
 
 								@include laptop() {
-									right: 10px;
-									top: 6px;
+									right: 18px;
+									top: 15px;
 								}
 							}
 						}
