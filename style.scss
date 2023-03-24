@@ -77,7 +77,11 @@ body {
 	color: white;
 
 	header {
-		height: 100vh;
+		height: 75vh;
+
+		@include laptop() {
+			height: 90vh;
+		}
 
 		nav {
 			@include flex($justify:space-between);
@@ -196,14 +200,16 @@ body {
 			height: 85%;
 			@include flex($direction:column, $justify:flex-start);
 			gap: 4rem;
-			padding-top: 10rem;
+			padding-top: 5rem;
 
 			@include tablet() {
 				gap: 6rem;
+				padding-top: 7rem;
 			}
 
 			@include laptop() {
 				gap: 8rem;
+				padding-top: 10rem;
 			}
 
 			>div {
@@ -275,7 +281,7 @@ body {
 							}
 
 							button {
-								height: 50px;
+								height: 45px;
 								width: 225px;
 								border-radius: 2rem;
 								background: linear-gradient(110.97deg,
@@ -293,7 +299,7 @@ body {
 								}
 
 								@include laptop() {
-									height: 75px;
+									height: 70px;
 									width: 295px;
 									border-radius: 4rem;
 									cursor: pointer;
@@ -343,7 +349,7 @@ body {
 							div {
 								position: relative;
 								@include flex;
-								height: 50px;
+								height: 45px;
 								width: 225px;
 								border-radius: 2rem;
 								background: linear-gradient(110.97deg,
@@ -359,7 +365,7 @@ body {
 								}
 
 								@include laptop() {
-									height: 75px;
+									height: 70px;
 									width: 295px;
 									border-radius: 4rem;
 									font-size: 1.25rem;
@@ -382,99 +388,218 @@ body {
 			}
 		}
 
-		display: none;
+		// display: none;
 	}
 
-	.announcements {
-		border: 2px solid red;
+	.main {
+		// border: 2px solid;
+		gap: 8rem;
 		@include flex($direction:column);
-		gap: 1.2rem;
-
-		@include tablet() {
-			gap: 2rem;
-		}
 
 		@include laptop() {
-			gap: 2rem;
+			@include flex($justify:space-between);
+			padding-inline: 2.5rem;
+			gap: 3rem;
 		}
 
-		h3 {
-			text-transform: capitalize;
-			font-size: 14px;
+		.announcements {
+			@include flex($direction:column);
+			gap: 1.2rem;
 
 			@include tablet() {
-				font-size: 18px;
+				gap: 1.5rem;
 			}
 
 			@include laptop() {
-				font-size: 14px;
+				gap: 1.75rem;
 			}
-		}
 
-		.drawing {
-			// border: 2px dashed rebeccapurple;
-			height: 160px;
-			width: 320px;
+			h3 {
+				text-transform: capitalize;
+				font-size: .875rem;
 
-			.nav {
-				border-top-right-radius: .5rem;
-				border-top-left-radius: .5rem;
-				height: 10px;
-				background-color: rgba(149, 190, 220, 1);
-				@include flex($justify:flex-start);
-				gap: .25rem;
-				padding-inline-start: 3%;
+				@include tablet() {
+					font-size: 1.125rem;
+				}
 
-				span {
-					@include equal(5px);
-					background-color: rgba(14, 19, 48, 1);
-					border-radius: 50%;
+				@include laptop() {
+					font-size: 1.375rem;
 				}
 			}
 
-			.body {
-				position: relative;
-				border: 1px solid rgba(40, 45, 69, 1);
-				height: calc(100% - 10px);
-				border-bottom-left-radius: 6px;
-				border-bottom-right-radius: 6px;
-				@include flex($direction:column);
-				gap: 1rem;
+			.drawing {
+				height: 160px;
+				width: 320px;
 
-				* {
-					font-weight: 700;
+				@include laptop() {
+					min-height: 300px;
+					width: 550px;
 				}
 
-				span {
-					@include flex;
-					@include equal(1rem);
-					position: absolute;
-					top: 10%;
-					left: 5%;
+				.nav {
+					border-top-right-radius: .5rem;
+					border-top-left-radius: .5rem;
+					height: 10px;
+					background-color: rgba(149, 190, 220, 1);
+					@include flex($justify:flex-start);
+					gap: .25rem;
+					padding-inline-start: 3%;
 
-					img {
-						object-fit: scale-down;
-						@include equal(inherit);
+					span {
+						@include equal(5px);
+						background-color: rgba(14, 19, 48, 1);
+						border-radius: 50%;
 					}
 				}
 
-				p {
-					padding-block-start: 2rem;
-					text-align: center;
-					font-size: 11px;
+				.body {
+					position: relative;
+					border: 1px solid rgba(40, 45, 69, 1);
+					height: calc(100% - 10px);
+					border-bottom-left-radius: 6px;
+					border-bottom-right-radius: 6px;
+					@include flex($direction:column);
+					gap: 1rem;
+
+					* {
+						font-weight: 700;
+					}
+
+					span {
+						@include flex;
+						@include equal(1rem);
+						position: absolute;
+						top: 10%;
+						left: 5%;
+
+						img {
+							object-fit: scale-down;
+							@include equal(inherit);
+						}
+					}
+
+					p {
+						padding-block-start: 2rem;
+						text-align: center;
+						font-size: 11px;
+					}
+
+					button {
+						height: 20px;
+						width: 100px;
+						border: none;
+						outline: none;
+						border-radius: 10px;
+						font-size: 7px;
+						color: rgba(20, 32, 63, 1);
+						background-color: rgba(165, 170, 181, 0.88);
+					}
+				}
+			}
+		}
+
+		.features {
+			@include flex($direction:column);
+			gap: 5rem;
+			padding-inline: 1.5rem;
+			width: 100%;
+
+			@include laptop() {
+				width: 80%;
+			}
+
+			>div {
+				gap: .5rem;
+				width: 100%;
+				@include flex($justify:space-between);
+
+				@include laptop() {
+					gap: 2rem;
 				}
 
-				button {
-					height: 20px;
-					width: 100px;
-					border: none;
-					outline: none;
-					border-radius: 10px;
-					font-size: 7px;
-					color: rgba(20, 32, 63, 1);
-					background-color: rgba(165, 170, 181, 0.88);
+				.left {
+					position: relative;
+					height: 50px;
+					width: 15%;
+					@include flex;
+				}
+
+				&:nth-of-type(1) {
+					.left {
+						img {
+							position: absolute;
+
+							&:nth-of-type(2) {
+								right: 7px;
+								top: 12px;
+
+								@include laptop() {
+									right: 15px;
+									top: 11px;
+								}
+							}
+						}
+					}
+				}
+
+				&:nth-of-type(2) {
+					.left {
+						img {
+							position: absolute;
+
+							&:nth-of-type(2) {
+								right: 3px;
+								top: 7px;
+								z-index: -1;
+
+								@include laptop() {
+									right: 10px;
+									top: 6px;
+								}
+							}
+						}
+					}
+				}
+
+				&:nth-of-type(3) {
+					.left {
+						img {
+							position: absolute;
+
+							&:nth-of-type(2) {
+								right: 14px;
+								top: 15px;
+								z-index: -1;
+
+								@include laptop() {
+									right: 10px;
+									top: 6px;
+								}
+							}
+						}
+					}
+				}
+
+				.right {
+					@include flex($direction:column);
+					width: 85%;
+
+					* {
+						font-weight: 700;
+					}
+
+					h4 {
+						font-size: 13px;
+						text-transform: capitalize;
+					}
+
+					p {
+						text-align: center;
+						font-size: 11px;
+					}
 				}
 			}
 		}
 	}
+
 }
