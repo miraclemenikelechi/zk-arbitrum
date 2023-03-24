@@ -77,10 +77,12 @@ body {
 	color: white;
 
 	header {
+		height: 100vh;
+
 		nav {
 			@include flex($justify:space-between);
 			height: 50px;
-			padding: 2.5rem 1.5rem;
+			padding: 2.5rem 1rem;
 
 			@include tablet() {
 				padding: 4rem 2.5rem;
@@ -103,26 +105,18 @@ body {
 
 						@include tablet() {
 							@include equal(75px);
-
-							&::after {
-								position: absolute;
-								@include equal(65px);
-								clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-								background-color: rgba(44, 55, 75, 1);
-								z-index: -1;
-							}
 						}
 
 						img {
 							border-radius: inherit;
 							@include flex;
-							@include equal(40px);
+							@include equal(44px);
 							clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 							background-color: rgba(44, 55, 75, 1);
 							object-fit: scale-down;
 
 							@include tablet() {
-								@include equal(35px);
+								@include equal(40px);
 								transform: scale(1.7);
 							}
 						}
@@ -131,6 +125,10 @@ body {
 					&:nth-of-type(2) {
 						font-size: 1rem;
 						color: rgba(152, 188, 219, 1);
+
+						@include mobile() {
+							font-size: .75rem;
+						}
 
 						@include tablet() {
 							font-size: 2rem;
@@ -141,17 +139,18 @@ body {
 
 			.nav-actions {
 				@include flex;
-				gap: 1.5rem;
+				gap: .75rem;
 				min-height: 100%;
 
 				button {
-					height: 30px;
-					width: 115px;
+					height: 27px;
+					width: 111px;
 					border-radius: .75rem;
 					@include flex;
 					border: none;
 					background-color: rgba(44, 55, 75, 1);
 					color: white;
+					font-weight: 400;
 
 					@include tablet() {
 						height: 50px;
@@ -169,6 +168,7 @@ body {
 				}
 
 				>span {
+					@include flex;
 					animation: fade infinite 2s alternate-reverse;
 
 					@keyframes fade {
@@ -186,10 +186,107 @@ body {
 			@include tablet() {
 				height: 100px;
 			}
-
-			// border: 2px solid;
 		}
 
-		// border: 2px solid;
+		.hero {
+			height: 85%;
+			@include flex($direction:column, $justify:flex-start);
+			gap: 4rem;
+			padding-top: 10rem;
+
+			>div {
+
+				// first div in class
+				&:nth-of-type(1) {
+					text-align: center;
+
+					* {
+						font-weight: 700;
+					}
+
+					h2 {
+						font-size: 17px;
+					}
+
+					p {
+						font-size: 12px;
+					}
+				}
+
+				// second div in class
+				&:nth-of-type(2) {
+					@include flex($direction:column);
+					gap: 3rem;
+
+					>div {
+
+						// children div from parent div in class
+						&:nth-of-type(1) {
+							@include flex($direction:column);
+							gap: .5rem;
+
+							p {
+								font-size: .75rem;
+								font-weight: 700;
+							}
+
+							button {
+								height: 50px;
+								width: 225px;
+								border-radius: 2rem;
+								background: linear-gradient(110.97deg,
+										rgba(255, 255, 255, 0.5) -4.87%,
+										rgba(110, 162, 200, 0.5) -4.87%,
+										rgba(255, 255, 255, 0.268229) 45.57%,
+										rgba(255, 255, 255, 0) 103.95%);
+								border: none;
+								outline: none;
+								backdrop-filter: blur(25px);
+
+								span {
+									font-size: 15px;
+									font-weight: 400;
+									color: white;
+								}
+							}
+						}
+
+						&:nth-of-type(2) {
+							@include flex($direction:column);
+							gap: .5rem;
+
+							p {
+								font-weight: 700;
+								font-size: .8125rem;
+							}
+
+							div {
+								position: relative;
+								@include flex;
+								height: 50px;
+								width: 225px;
+								border-radius: 2rem;
+								background: linear-gradient(110.97deg,
+										rgba(255, 255, 255, 0.5) -4.87%,
+										rgba(110, 162, 200, 0.5) -4.87%,
+										rgba(255, 255, 255, 0.268229) 45.57%,
+										rgba(255, 255, 255, 0) 103.95%);
+
+								span {
+									padding-inline-start: .5rem;
+									font-weight: 400;
+								}
+
+								img {
+									position: absolute;
+									right: 15%;
+									@include equal(20px)
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
