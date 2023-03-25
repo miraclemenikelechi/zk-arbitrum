@@ -91,9 +91,10 @@ body {
 
 .container {
 	color: white;
+	overflow: hidden;
 
 	header {
-		height: 75vh;
+		padding-bottom: 12rem;
 
 		@include laptop() {
 			height: 90vh;
@@ -814,6 +815,7 @@ body {
 
 			div {
 				@include equal(185px);
+				margin-block: .75rem;
 
 				img {
 					object-fit: contain;
@@ -831,7 +833,7 @@ body {
 
 				@include laptop() {
 					width: 80%;
-					gap: 6rem;
+					gap: 4rem;
 				}
 
 				li {

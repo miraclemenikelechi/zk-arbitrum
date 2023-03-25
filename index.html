@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>ZK ARBITRUM</title>
 </head>
@@ -18,7 +19,7 @@
 						<span>
 							<img src="/logo.svg" alt="">
 						</span>
-						<span>ZK ARBITRUM</span>
+						<span data-aos="flip-down" data-aos-duration="400">ZK ARBITRUM</span>
 					</div>
 
 					<div class="nav-actions">
@@ -33,15 +34,15 @@
 
 				<section class="hero">
 					<div>
-						<h2>
+						<h2 data-aos="zoom-in" data-aos-delay="250">
 							zk-Rollups on the Arbitrum Blockchain
 						</h2>
-						<p>
+						<p data-aos="zoom-out" data-aos-delay="750">
 							a Layer 2 scaling solution built on top of Ethereum
 						</p>
 					</div>
 
-					<div>
+					<div data-aos="zoom-in-up" data-aos-duration="1200">
 						<div>
 							<p>check your eligibility to claim $zk-ARB</p>
 							<button>
@@ -52,10 +53,10 @@
 						<div>
 							<p>Claiming will be live in:</p>
 							<div>
-								<span>12</span>d
-								<span>21</span>h
-								<span>38</span>m
-								<img src="/clock.svg" alt="">
+								<span id="day">12</span>d
+								<span id="hr">21</span>h
+								<span id="min">38</span>m
+								<span id="sec">38</span>s
 							</div>
 						</div>
 					</div>
@@ -64,7 +65,7 @@
 
 			<!-- page 2 -->
 			<section class="main">
-				<div class="announcements">
+				<div class="announcements" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="300">
 					<h3>announcements</h3>
 
 					<div class="drawing">
@@ -92,12 +93,12 @@
 
 				<div class="features">
 					<div>
-						<div class="left">
+						<div class="left" data-aos="fade-right" data-aos-delay="250">
 							<img src="/blue-star.svg" alt="">
 							<img src="/white-star.svg" alt="">
 						</div>
 
-						<div class="right">
+						<div class="right" data-aos="fade-left">
 							<h4>interoperability</h4>
 
 							<p>
@@ -110,12 +111,12 @@
 					</div>
 
 					<div>
-						<div class="left">
+						<div class="left" data-aos="fade-left" data-aos-delay="350">
 							<img src="/triangle-white.svg" alt="">
 							<img src="/triangle-blue.svg" alt="">
 						</div>
 
-						<div class="right">
+						<div class="right" data-aos="fade-right">
 							<h4>improved efficiency</h4>
 
 							<p>
@@ -128,12 +129,12 @@
 					</div>
 
 					<div>
-						<div class="left">
+						<div class="left" data-aos="fade-right" data-aos-delay="450">
 							<img src="/drop-white.svg" alt="">
 							<img src="/drop-blue.svg" alt="">
 						</div>
 
-						<div class="right">
+						<div class="right" data-aos="fade-left">
 							<h4>data compression</h4>
 
 							<p>
@@ -150,9 +151,9 @@
 			<!-- page 3 -->
 			<section class="documentation-container">
 				<div class="left">
-					<h3>documentations</h3>
+					<h3 data-aos="fade-up" data-aos-duration="250">documentations</h3>
 
-					<p>
+					<p data-aos="zoom-in" data-aos-delay="500">
 						<span>'zk-Rollups</span> utilize zero-knowledge proofs (zk-snarks) to ensure transaction data
 						remains private
 						while still allowing for validation.
@@ -161,7 +162,7 @@
 					<button>read docs <img src="/docs.svg" alt=""> </button>
 				</div>
 
-				<div class="right">
+				<div class="right" data-aos="zoom-in-left" data-aos-delay="300">
 					<img src="/contract.png" alt="">
 				</div>
 			</section>
@@ -169,46 +170,46 @@
 			<!-- page 4 -->
 			<section class="roadmap-container">
 				<div class="left">
-					<h3>roadmap</h3>
+					<h3 data-aos="flip-left">roadmap</h3>
 
 					<ul>
-						<li>
+						<li data-aos="zoom-in-down" data-aos-delay="100">
 							<span>Project launch</span>
 							<span>q1</span>
 						</li>
 
-						<li>
+						<li data-aos="zoom-in-down" data-aos-delay="150">
 							<span>Dao airdrop cleaning</span>
 						</li>
 
-						<li>
+						<li data-aos="zoom-in-down" data-aos-delay="200">
 							<span>Public safe & listing</span>
 						</li>
 
-						<li>
+						<li data-aos="zoom-in-down" data-aos-delay="250">
 							<span>dApp launch</span>
 							<span>q2</span>
 						</li>
 
-						<li>
+						<li data-aos="zoom-in-down" data-aos-delay="300">
 							<span>Bridges & dao</span>
 							<span>q3</span>
 						</li>
 
-						<li>
+						<li data-aos="zoom-in-down" data-aos-delay="350">
 							<span>Growth & proposals</span>
 						</li>
 					</ul>
 				</div>
 
 				<div class="right">
-					<h3>tokenomics</h3>
+					<h3 data-aos="flip-down">tokenomics</h3>
 
-					<div>
+					<div data-aos="fade-up" data-aos-anchor-placement="top-center">
 						<img src="/chart.png" alt="">
 					</div>
 
-					<ul>
+					<ul data-aos="zoom-out-up">
 						<li>
 							<span></span>
 							<span>Dao treasury</span>
@@ -232,26 +233,26 @@
 				</div>
 			</section>
 
-			<footer>
-					<ul>
-						<li>resources</li>
-						<li>developer docs</li>
-						<li>proposals</li>
-						<li>future roadmap</li>
-						<li>arbitrum ecosystem</li>
-						<li>bridge</li>
-						<li>growth</li>
-					</ul>
+			<footer data-aos="fade-down-right">
+				<ul>
+					<li>resources</li>
+					<li>developer docs</li>
+					<li>proposals</li>
+					<li>future roadmap</li>
+					<li>arbitrum ecosystem</li>
+					<li>bridge</li>
+					<li>growth</li>
+				</ul>
 
-					<ul>
-						<li>blog</li>
-						<li>dapp portal</li>
-						<li>governance</li>
-						<li>perpetuals</li>
-						<li>swapping</li>
-						<li>dao tools</li>
-						<li>investors</li>
-					</ul>
+				<ul>
+					<li>blog</li>
+					<li>dapp portal</li>
+					<li>governance</li>
+					<li>perpetuals</li>
+					<li>swapping</li>
+					<li>dao tools</li>
+					<li>investors</li>
+				</ul>
 			</footer>
 		</div>
 	</section>
