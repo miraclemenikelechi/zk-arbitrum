@@ -895,7 +895,7 @@ body {
 
 	footer {
 		padding: 5rem 0 2rem 0;
-		@include flex();
+		@include flex($justify:flex-start);
 		gap: 5rem;
 		padding-inline: 2.5rem;
 		overflow: hidden;
