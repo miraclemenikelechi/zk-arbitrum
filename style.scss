@@ -109,55 +109,18 @@ body {
 				@include flex;
 				gap: .5rem;
 
-				span {
-					@include flex;
+				img {
+					width: 150px;
 
-					&:nth-of-type(1) {
-						border-radius: 5px;
-						clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-						height: 2.375rem;
-						width: 2.1875rem;
-						position: relative;
-						border: 25px solid rgba(149, 190, 220, 1);
-
-						@include tablet() {
-							@include equal(75px);
-						}
-
-						img {
-							border-radius: inherit;
-							@include flex;
-							@include equal(44px);
-							clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-							background-color: rgba(44, 55, 75, 1);
-							object-fit: scale-down;
-
-							@include tablet() {
-								@include equal(40px);
-								transform: scale(1.7);
-							}
-						}
-					}
-
-					&:nth-of-type(2) {
-						font-size: .75rem;
-						color: rgba(152, 188, 219, 1);
-						font-family: zen;
-
-						@include tablet() {
-							font-size: 1.25rem;
-						}
-
-						@include laptop() {
-							font-size: 2rem;
-						}
+					@include laptop() {
+						width: 250px;
 					}
 				}
 			}
 
 			.nav-actions {
 				@include flex;
-				gap: .75rem;
+				gap: 1.5rem;
 				min-height: 100%;
 
 				@include laptop() {
@@ -565,7 +528,8 @@ body {
 				@include flex($justify:space-between);
 
 				@include laptop() {
-					gap: 2rem;
+					width: 75%;
+					gap: 1rem;
 				}
 
 				.left {
@@ -573,6 +537,10 @@ body {
 					height: 50px;
 					width: 15%;
 					@include flex;
+
+					@include laptop() {
+						width: 100px;
+					}
 				}
 
 				&:nth-of-type(1) {
@@ -585,7 +553,7 @@ body {
 								top: 12px;
 
 								@include laptop() {
-									right: 19px;
+									right: 25px;
 									top: 12px;
 								}
 							}
@@ -604,8 +572,8 @@ body {
 								z-index: -1;
 
 								@include laptop() {
-									right: 15px;
-									top: 8px;
+									right: 22px;
+									top: 7px;
 								}
 							}
 						}
@@ -623,8 +591,8 @@ body {
 								z-index: -1;
 
 								@include laptop() {
-									right: 18px;
-									top: 15px;
+									right: 28px;
+									top: 15\6px;
 								}
 							}
 						}
@@ -665,13 +633,12 @@ body {
 	// page 3
 	.documentation-container {
 		padding-top: 8rem;
-		@include flex($direction:column);
+		@include flex($direction:column-reverse);
 		gap: 5rem;
 		padding-inline: 2.5rem;
 		overflow: hidden;
 
 		@include laptop() {
-			@include flex();
 			gap: 2rem;
 		}
 
@@ -684,14 +651,21 @@ body {
 				text-transform: capitalize;
 				font-weight: 400;
 				font-size: .875rem;
+
+				@include laptop() {
+					font-size: 1rem;
+				}
 			}
 
 			p {
 				text-align: center;
 				font-family: aeonik;
 				width: 75%;
+				font-size: 1rem;
 
-				@include tablet() {}
+				@include laptop() {
+					font-size: 1.15rem;
+				}
 
 				span {
 					color: rgba(179, 205, 228, 1);
@@ -707,6 +681,10 @@ body {
 				outline: none;
 				border-radius: 15px;
 				text-transform: capitalize;
+
+				@include laptop() {
+					font-size: .85rem;
+				}
 			}
 		}
 
@@ -715,10 +693,6 @@ body {
 			height: 500px;
 			@include flex($justify:flex-end);
 			position: relative;
-
-			@include laptop() {
-				width: 65%;
-			}
 
 			img {
 				object-fit: contain;
@@ -729,8 +703,7 @@ body {
 				scale: 1.5;
 
 				@include laptop() {
-					// top: 15rem;
-					scale: 1.65;
+					scale: 1;
 				}
 			}
 		}
@@ -745,8 +718,8 @@ body {
 		overflow: hidden;
 
 		@include laptop() {
-			@include flex($justify:space-between);
-			gap: 2rem;
+			// @include flex($justify:space-between);
+			// gap: 2rem;
 		}
 
 		.left {
@@ -755,7 +728,7 @@ body {
 			gap: 1.5rem;
 
 			@include laptop() {
-				width: 45%;
+				width: 60%;
 			}
 
 			h3 {
@@ -935,8 +908,8 @@ body {
 		font-family: $montserrat;
 
 		@include laptop() {
-			padding: 8rem;
-			@include flex();
+			padding: 5rem 8rem;
+			@include flex($justify:space-between);
 			gap: 10rem;
 		}
 
