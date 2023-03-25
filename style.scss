@@ -96,10 +96,6 @@ body {
 	header {
 		padding-bottom: 12rem;
 
-		@include laptop() {
-			height: 90vh;
-		}
-
 		nav {
 			@include flex($justify:space-between);
 			height: 50px;
@@ -163,6 +159,10 @@ body {
 				@include flex;
 				gap: .75rem;
 				min-height: 100%;
+
+				@include laptop() {
+					gap: 3rem;
+				}
 
 				button {
 					height: 27px;
@@ -423,7 +423,7 @@ body {
 		@include flex($direction:column);
 
 		@include laptop() {
-			@include flex($justify:space-between);
+			// @include flex($justify:space-between);
 			padding-inline: 2.5rem;
 			gap: 3rem;
 		}
@@ -489,6 +489,10 @@ body {
 					@include flex($direction:column);
 					gap: 1rem;
 
+					@include laptop() {
+						gap: 2rem;
+					}
+
 					* {
 						font-weight: 700;
 						font-family: aeonik;
@@ -497,6 +501,11 @@ body {
 					span {
 						@include flex;
 						@include equal(1rem);
+
+						@include laptop() {
+							@include equal(2rem)
+						}
+
 						position: absolute;
 						top: 10%;
 						left: 5%;
@@ -511,6 +520,10 @@ body {
 						padding-block-start: 2rem;
 						text-align: center;
 						font-size: 11px;
+
+						@include laptop() {
+							font-size: 14px;
+						}
 					}
 
 					button {
@@ -522,6 +535,14 @@ body {
 						font-size: 7px;
 						color: rgba(20, 32, 63, 1);
 						background-color: rgba(165, 170, 181, 0.88);
+
+						@include laptop() {
+							font-size: 11px;
+							cursor: pointer;
+							height: 35px;
+							border-radius: 20px;
+							width: 150px;
+						}
 					}
 				}
 			}
@@ -621,11 +642,20 @@ body {
 					h4 {
 						font-size: 13px;
 						text-transform: capitalize;
+
+						@include laptop() {
+							font-size: 17px;
+						}
 					}
 
 					p {
 						text-align: center;
 						font-size: 11px;
+
+						@include laptop() {
+							font-size: 14px;
+							width: 65%;
+						}
 					}
 				}
 			}
@@ -699,7 +729,8 @@ body {
 				scale: 1.5;
 
 				@include laptop() {
-					scale: 1.75;
+					top: 10rem;
+					scale: 1.5;
 				}
 			}
 		}
@@ -905,6 +936,8 @@ body {
 
 		@include laptop() {
 			padding: 8rem;
+			@include flex();
+			gap: 10rem;
 		}
 
 		>ul {
