@@ -8,7 +8,7 @@ const
     hr = document.querySelector("#hr"),
     min = document.querySelector("#min"),
     sec = document.querySelector("#sec"),
-    dDay = "1 Apr 2023";
+    dDay = "25 Dec 2023";
 
 function countDown() {
     const
